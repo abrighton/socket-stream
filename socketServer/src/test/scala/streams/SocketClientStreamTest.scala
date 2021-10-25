@@ -14,7 +14,7 @@ import streams.server.SocketServerStream
 import streams.shared.SocketMessage
 
 private object TestActor {
-  // XXX On MacOS this failed when set above 660, on Linux it passed
+  // XXX On MacOS this failed when set above 660, on Linux it passed with 10000
   val segmentCount = 670
 
   sealed trait TestMessages
@@ -35,7 +35,7 @@ private class TestActor(ctx: ActorContext[TestMessages]) extends AbstractBehavio
       case Start(replyTo) =>
         val segments    = (1 to segmentCount).toList
         val clientPairs = segments.map(i => (i, SocketClientStream(ctx, s"client_$i")))
-        val fList       = clientPairs.map(p => p._2.send(s"DELAY ${p._1 * 10}"))
+        val fList       = clientPairs.map(p => p._2.send(s"DELAY ${p._1 * 2}"))
         Future
           .sequence(fList)
           .map(_.forall(_.cmd.endsWith("COMPLETED")))

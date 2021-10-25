@@ -170,7 +170,7 @@ class SocketClientStream private(spawnHelper: SpawnHelper, name: String, host: S
 
   private val connectedFlow = connection.join(flow).run()
   connectedFlow.foreach { c =>
-    println(s"$name: local addr: ${c.localAddress}, remote addr: ${c.remoteAddress}")
+//    println(s"$name: local addr: ${c.localAddress}, remote addr: ${c.remoteAddress}")
   }
 
   /**
