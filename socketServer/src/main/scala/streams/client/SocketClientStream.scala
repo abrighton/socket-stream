@@ -169,9 +169,14 @@ class SocketClientStream private(spawnHelper: SpawnHelper, name: String, host: S
     .via(parser)
 
   private val connectedFlow = connection.join(flow).run()
-  connectedFlow.foreach { c =>
+  connectedFlow
+    .recover {
+      case ex: Exception =>
+        ex.printStackTrace()
+    }
+//    .foreach { c =>
 //    println(s"$name: local addr: ${c.localAddress}, remote addr: ${c.remoteAddress}")
-  }
+//  }
 
   /**
    * Sends a command to the server and returns the response

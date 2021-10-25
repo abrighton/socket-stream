@@ -14,8 +14,9 @@ import streams.server.SocketServerStream
 import streams.shared.SocketMessage
 
 private object TestActor {
-  // XXX On MacOS this failed when set above 660, on Linux it passed with 10000
-  val segmentCount = 670
+  // XXX On MacOS this failed when set above a certain value (300 - 620, depending on the environment?),
+  // on Linux it passed with 10000
+  val segmentCount = 492
 
   sealed trait TestMessages
   case class Start(actorRef: ActorRef[Boolean]) extends TestMessages

@@ -9,7 +9,7 @@ The last test, "Test with actor" attempts to make segmentCount connections.
 If segmentCount is greater than 660, it fails on my MacOS Sierra (virtual machine),
 but passes on Linux (PopOS 21.04).
 
-I modified the system limits:
+I modified the system limits: (See launchctl command and https://support.apple.com/en-us/HT202528)
 
 >  launchctl limit
 cpu         unlimited      unlimited      
