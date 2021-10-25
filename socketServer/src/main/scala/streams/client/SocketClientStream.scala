@@ -85,6 +85,10 @@ private[client] class SocketClientActor(name: String, ctx: ActorContext[SocketCl
   }
 }
 
+/**
+ * A client for the SocketServerStream that sends SocketMessages (via the send() method)
+ * and receives a response.
+ */
 object SocketClientStream {
 
   /**

@@ -11,9 +11,8 @@ import scala.concurrent.duration.*
 import scala.concurrent.{Future, Promise}
 
 /**
- * A TCL socket server that listens on the given host:port for connections
- * and accepts String messages in the format "id cmd". A reply is sent for
- * each message: "id COMPLETED".
+ * A socket server that listens on the given host:port for connections
+ * and accepts SocketMessages (encoded as ByteString) and replies to each message.
  *
  * Currently any command can be sent and COMPLETED is always returned.
  * If the command is "DELAY ms" the reply is made after the given ms delay.
