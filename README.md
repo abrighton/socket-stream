@@ -38,6 +38,6 @@ OpenJDK 64-Bit Server VM Temurin-11.0.12+7 (build 11.0.12+7, mixed mode)
 
 On Linux:
 
-openjdk version "1.8.0_292"
-OpenJDK Runtime Environment (build 1.8.0_292-8u292-b10-0ubuntu1-b10)
-OpenJDK 64-Bit Server VM (build 25.292-b10, mixed mode)
+openjdk version "11.0.11" 2021-04-20
+OpenJDK Runtime Environment (build 11.0.11+9-Ubuntu-0ubuntu2)
+OpenJDK 64-Bit Server VM (build 11.0.11+9-Ubuntu-0ubuntu2, mixed mode, sharing)
